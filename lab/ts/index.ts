@@ -20,7 +20,7 @@ sqlConnection.connect(function(err) {
 
 app.get("/", function(req, res) {
   const getParameters = url.parse(req.url || "", true).query;
-  console.log("get parameters are: ", getParameters);
+  console.log("get parameters are: ", getParameters + " from: " + req.ip);
   if (getParameters.factorialof) {
     //mysql connection & query here....
     const factorialof: number = Number.parseInt(
