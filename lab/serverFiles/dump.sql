@@ -8,7 +8,7 @@ CREATE TABLE user(
     id          INT PRIMARY KEY AUTO_INCREMENT,
     username    VARCHAR(30) NOT NULL UNIQUE,
     password    VARCHAR(255) NOT NULL,
-    sprite mediumblob null)
+    sprite mediumblob null);
     
 SHOW WARNINGS;
 
@@ -21,8 +21,7 @@ CREATE TABLE quiz(
     major VARCHAR(255) not null,
     FOREIGN KEY(userid) REFERENCES user(id)
         ON DELETE CASCADE
-        ON UPDATE CASCADE
-
+        ON UPDATE CASCADE);
 SHOW WARNINGS;
 
 DROP TABLE IF EXISTS question;
@@ -32,7 +31,7 @@ CREATE TABLE question(
     question VARCHAR(255) not null,
     FOREIGN KEY(quizid) REFERENCES quiz(id)
         ON DELETE CASCADE
-        ON UPDATE CASCADE
+        ON UPDATE CASCADE);
 
 SHOW WARNINGS;
 
@@ -43,7 +42,7 @@ CREATE TABLE game(
     question VARCHAR(255) not null,
     FOREIGN KEY(quizid) REFERENCES quiz(id)
         ON DELETE CASCADE
-        ON UPDATE CASCADE
+        ON UPDATE CASCADE);
 
 SHOW WARNINGS;
 
