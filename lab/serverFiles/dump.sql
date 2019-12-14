@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS user;
 CREATE TABLE user(
     id          INT PRIMARY KEY AUTO_INCREMENT,
     username    VARCHAR(30) NOT NULL UNIQUE,
-    password    VARCHAR(255) NOT NULL,
+    upassword    VARCHAR(255) NOT NULL,
     sprite mediumblob null);
     
 SHOW WARNINGS;
@@ -63,10 +63,10 @@ CREATE TABLE game_players(
 
 SHOW WARNINGS;
 
-insert into user (id,username,'password')
-    values (0,person1,'password'),
-    (1,person2,'password'),
-    (2,person3,'password');
+insert into user (id,username,upassword)
+    values (0,person1,'upassword'),
+    (1,person2,'upassword'),
+    (2,person3,'upassword');
 
 insert into quiz (id,userid,name)
     values (0,0,"Video Games"),
